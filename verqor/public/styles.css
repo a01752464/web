@@ -1,0 +1,171 @@
+body {
+    font-family: Arial;
+    color: rgb(18, 45, 103);
+    background-color: #ffffff;
+}
+a{
+    text-decoration: none;}
+span{
+    color: rgb(18, 45, 103);
+    font-family: 'outfit', sans-serif;
+    text-decoration: none;}
+
+h1{
+    font-family: 'outfit', sans-serif, Bold; 
+    font-size: 105px;
+    font-weight: 400;
+    color: rgb(20, 20, 20);
+    position: absolute;
+    left: 30px;
+    top: 108px;
+}
+
+.logo{
+    width: 133px;
+    height: auto;
+    position: absolute;
+    display: inline-block;
+    top: 18px;
+    left: 96px;
+    }
+
+.subrayable{
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#InfoVerqor{
+    position: absolute;
+    top: 38px;
+    left: 344.5px;
+}
+
+#Catalogo{
+    position: absolute;
+    top: 38px;
+    left: 489px;
+}
+
+#Sustentabilidad{
+    position: absolute;
+    top: 38px;
+    left: 595px;
+}
+
+#Noticias{
+    position: absolute;
+    top: 38px;
+    left: 744.5px;
+}
+
+#Contactanos{
+    position: absolute;
+    top: 38px;
+    left: 842px;
+
+}
+
+.subrayable:hover{
+    border-bottom: 1px solid rgb(18, 45, 103);
+}
+
+#reg{
+    color: #ffffff;
+    background-color: rgb(253,138,50);
+    margin-right: -3px;
+    height: 56px;
+    width: 181px;
+    font-size: 16px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; 
+    border: none;
+    border: 1px solid #fd8a3200;
+}
+
+#cajanaranja{
+    position: absolute;
+    top: 21px;
+    right: 280px;
+}
+
+#cajablanca{
+    position: absolute;
+    top: 21px;
+    right:96px;
+    z-index: -1;
+
+}
+
+#regtext{
+    position: absolute;
+    font-family: 'outfit', sans-serif;
+    top: 3px;
+    font-weight: 500;
+    right: 32px;
+
+
+}
+#logtext{
+    position: absolute;
+    font-family: 'outfit', sans-serif;
+    top: 3px;
+    font-weight: 500;
+    right: 25px;
+
+}
+
+#regico{
+    position: absolute;
+    top: -4px;
+    left: -38px;
+    width: 30px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+
+}
+#loginico{
+    position: absolute;
+    top: -4px;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    color: #FD8A32;
+    display: inline-block;
+}
+
+#login{
+    margin-left: -3px;
+    color: rgb(253,138,50);
+    background-color: rgb(255, 255, 255);
+    
+    height: 56px;
+    width: 181px;
+    font-size: 16px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; 
+    text-align: right;
+    border: 1px solid rgb(253,138,50);
+}
+
+
+.inicial-bar{
+
+    background-color: #ffffff;
+    color: #000;
+
+    box-shadow: 0px 0px 8px 1.4px #999999;   /*explicame has que la sombra sea mas debil  */
+
+
+
+    font-family: 'outfit', sans-serif;
+    font-size: 25px;
+    height: 98px;
+    z-index: 100000;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    padding-bottom:0px ;}
