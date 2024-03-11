@@ -82,6 +82,40 @@ function App() {
       </div>
 
       <SparklesPreview />
+      <div className="creditos-container">
+        <h3 >Telefono</h3>
+        <h3 id="wh">Whatsapp</h3>
+        <h3>Email</h3>
+        <h4>+52 74 4980 0370</h4>
+        <h4>+52 56 3604 4223</h4>
+        <h4>hola@verqor.com</h4>
+        <hr className="linea"></hr>
+        <h3>Staff</h3>
+        <br />
+        <div className="containernaranja">
+          <p className="matricula">A01752464</p>
+          <p className="nombrecompleto">Joel <br /> Vargas</p>
+        </div>
+        <div className="containernaranja">
+          <p className="matricula">A01752464</p>
+          <p className="nombrecompleto">Fabrizio <br /> Martinez </p>
+        </div>
+        <div className="containernaranja">
+          <p className="matricula">A01752464</p>
+          <p className="nombrecompleto">Kevin <br /> Castro </p>
+        </div>
+        <div className="containernaranja">
+          <p className="matricula">A01752464</p>
+          <p className="nombrecompleto">Roger <br /> Rendon </p>
+        </div>
+        <div className="containernaranja">
+          <p className="matricula">A01752464</p>
+          <p className="nombrecompleto">Manuel <br /> Olmos </p>
+        </div>
+        
+
+
+      </div>
       
     </>
   );
