@@ -9,7 +9,7 @@ function App() {
       <div className="inicial-bar">
         <a href="https://verqor.com">
           <img
-            src="./public/verqorlogo.png"
+            src="../public/verqorlogo.png"
             alt="logo"
             className="logo"
           ></img>
@@ -41,7 +41,7 @@ function App() {
           </span>
         </a>
 
-        <a href="/web/verqor/registeruser.html">
+        <a href="https://verqor.com/register">
           <div id="cajanaranja">
             <button id="reg">
               <p id="regtext">
@@ -56,7 +56,7 @@ function App() {
             </button>
           </div>
         </a>
-        <a href="/web/verqor/login.html">
+        <a href="https://verqor.com/login">
           <div id="cajablanca">
             <button id="login">
               <p id="logtext">
@@ -82,10 +82,24 @@ function App() {
       </div>
 
       <SparklesPreview />
+
+      <div className="Juego">
+        <h2>Verqor Game</h2>
+        <canvas id="canvasjuego">
+          <script src="script.js"></script>
+        </canvas>
+        <h3 className="oscuras"> <span className="oscuras gruesas">Descripcion: </span> Eres un granjero en busca de expandir su negocio y tienes que buscar la financiación mas optima... </h3>
+        <br />
+        <h3 className="oscuras"> <span className="oscuras gruesas">Controles: </span> Mouse</h3>
+      </div>
+      <br />
+      <br />
+
       <div className="creditos-container">
         <h3 >Telefono</h3>
         <h3 id="wh">Whatsapp</h3>
         <h3>Email</h3>
+        <br />
         <h4>+52 74 4980 0370</h4>
         <h4>+52 56 3604 4223</h4>
         <h4>hola@verqor.com</h4>

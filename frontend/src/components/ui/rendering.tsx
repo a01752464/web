@@ -1,5 +1,3 @@
-// Si estás utilizando TypeScript, cambia la extensión a .tsx y ajusta las importaciones y componentes para usar tipos adecuados.
-
 import { useEffect, RefObject } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -14,12 +12,13 @@ const ThreeModelComponent: React.FC<ThreeModelComponentProps> = ({ containerRef 
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    const width = container.clientWidth; // Ajusta esto según tus necesidades o usa dimensiones fijas
-    const height = container.clientHeight; // Ajusta esto según tus necesidades o usa dimensiones fijas
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
     // Cámara
-    const camera = new THREE.PerspectiveCamera(45, width / height, 0.25, 20);
-    camera.position.set(-1.8, 0.6, 2.7);
+    const camera = new THREE.PerspectiveCamera(50, width / height, 0.25, 100);
+    camera.position.set(0, 2.7, 4);
+    camera.lookAt(0, 2, 0);
 
     // Escena
     const scene = new THREE.Scene();
@@ -27,32 +26,42 @@ const ThreeModelComponent: React.FC<ThreeModelComponentProps> = ({ containerRef 
     // Iluminación
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
     scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.3);
-    directionalLight.position.set(1, 1, 0);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.6);
+    directionalLight.position.set(0, 2.7, 1);
     scene.add(directionalLight);
 
     // Renderizador
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
 
-    // Controles de órbita
-    new OrbitControls(camera, renderer.domElement);
+    // OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 2, 0);
+    
+    // Variable para almacenar el modelo
+    let model: THREE.Group | null = null;
 
     // Cargar el modelo GLTF
     const loader = new GLTFLoader();
     loader.load('../../../public/models/corn11.glb', (gltf) => {
-        scene.add(gltf.scene);
+      model = gltf.scene;
+      scene.add(model);
+      controls.update(); // Asegúrate de llamar a esto si cambias el target
     }, undefined, (error) => {
         console.error('Error al cargar el modelo GLTF:', error);
     });
 
     const animate = () => {
       requestAnimationFrame(animate);
+      
+      // Rotación del modelo
+      if (model) {
+        model.rotation.y += 0.01;
+      }
+      
+      controls.update(); // Necesario si OrbitControls habilita el damping o si cambia el target dinámicamente.
       renderer.render(scene, camera);
     };
 

@@ -1,4 +1,4 @@
-// Si estás utilizando TypeScript, asegúrate de ajustar las importaciones y componentes para usar tipos adecuados.
+
 
 import { useRef } from 'react';
 import { SparklesCore } from "./ui/sparkles";
@@ -9,22 +9,22 @@ export function SparklesPreview() {
 
   return (
     <>
-      <div className="h-[54rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="sparkles-preview-container">
+        <h1 className="text-3xl lg:text-100xl font-bold text-center text-verqor-color relative z-20 verqor-title">
+          Verqor Game
+        </h1>
         <div className="w-full absolute inset-0 h-screen">
           <SparklesCore
             id="tsparticlesfullpage"
-            background="#ffffff"
+            background="#F8F8FF"
             minSize={1.6}
             maxSize={3.2}
             particleDensity={200}
             className="w-full h-full"
             particleColor="#fd8a32" />
         </div>
-        <div ref={threeContainerRef} className="three-container" style={{ width: '500px', height: '500px' ,zIndex: '300'}} /> {/* Aquí se define el estilo directamente, pero podrías querer ajustarlo según tus necesidades */}
+        <div ref={threeContainerRef} className="three-container" style={{ width: '400px', height: '450px' ,zIndex: '300'}} /> {/* Aquí se define el estilo directamente, pero podrías querer ajustarlo según tus necesidades */}
         <ThreeModelComponent containerRef={threeContainerRef} />
-        <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-verqor-color relative z-20">
-          Verqor Game
-        </h1>
       </div>
     </>
   );
